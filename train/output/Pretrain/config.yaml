@@ -1,0 +1,23 @@
+base_mode: seqF
+batch_size_test: 64
+batch_size_train: 64
+episodic_mem_size: 10000
+gallery_file: /root/P9D/test_500.json
+gallery_image_root: /root/P9D/test
+image_size: 224
+init_lr: 0.0001
+k_test: 10
+max_epoch: 20
+max_words: 30
+min_lr: 1e-06
+query_file: /root/P9D/test_500.json
+task: [食品/保健, 家居用品]
+test_file: /root/P9D/test_500.json
+test_image_root: /root/P9D/test
+train_file: /root/P9D/train_500.json
+train_image_root: /root/P9D/train
+vit: base
+vit_ckpt_layer: 0
+vit_grad_ckpt: false
+weight_decay: 0.05
+window_size: 50

@@ -1,0 +1,28 @@
+train_file: '/kaggle/input/p9d-20241313-dataset/root/P9D/train_500.json'
+test_file: '/kaggle/input/p9d-20241313-dataset/root/P9D/test_500.json'
+query_file: '/kaggle/input/p9d-20241313-dataset/root/P9D/test_500.json'
+gallery_file: '/kaggle/input/p9d-20241313-dataset/root/P9D/test_500.json'
+train_image_root: '/kaggle/input/p9d-20241313-dataset/root/P9D/train'
+test_image_root: '/kaggle/input/p9d-20241313-dataset/root/P9D/test'
+gallery_image_root: '/kaggle/input/p9d-20241313-dataset/root/P9D/test'
+
+vit: 'base'
+vit_grad_ckpt: False
+vit_ckpt_layer: 0
+image_size: 224
+batch_size_train: 64
+batch_size_test: 64
+
+# optimizer
+weight_decay: 0.05
+init_lr: 3e-5
+min_lr: 1e-6
+k_test: 10
+max_words: 30
+window_size: 50
+
+#CL
+max_epoch: 100
+task: ['食品/保健', '家居用品']
+base_mode: 'seqF'
+
