@@ -62,11 +62,11 @@ class CLIP_Pretrain(nn.Module):
             state_dict = checkpoint["model"]     
             msg = self.visual_encoder.load_state_dict(state_dict,strict=False)      
                
-        self.tokenizer = BertTokenizer.from_pretrained("/root/.cache/huggingface/bert-base-chinese") #Download ‘bert-base-chinese’ in advance and save it to a local path 
+        self.tokenizer = BertTokenizer.from_pretrained("/kaggle/working/bert-base-chinese") #Download ‘bert-base-chinese’ in advance and save it to a local path 
         encoder_config = BertConfig.from_json_file(med_config)
         encoder_config.encoder_width = vision_width
 
-        self.text_mlm_encoder = BertForMaskedLM.from_pretrained("/root/.cache/huggingface/bert-base-chinese",config=encoder_config)
+        self.text_mlm_encoder = BertForMaskedLM.from_pretrained("/kaggle/working/bert-base-chinese",config=encoder_config)
         self.text_encoder = self.text_mlm_encoder.bert
 
         text_width = self.text_encoder.config.hidden_size
